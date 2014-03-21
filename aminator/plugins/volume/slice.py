@@ -19,9 +19,9 @@
 #
 
 """
-aminator.plugins.volume.linux
+aminator.plugins.volume.slice
 =============================
-basic linux volume allocator
+basic slice volume allocator
 """
 import logging
 import os
@@ -31,12 +31,12 @@ from aminator.util.linux import MountSpec, busy_mount, mount, mounted, unmount
 from aminator.exceptions import VolumeException
 from aminator.plugins.volume.base import BaseVolumePlugin
 
-__all__ = ('LinuxVolumePlugin',)
+__all__ = ('SliceVolumePlugin',)
 log = logging.getLogger(__name__)
 
 
-class LinuxVolumePlugin(BaseVolumePlugin):
-    _name = 'linux'
+class SliceVolumePlugin(BaseVolumePlugin):
+    _name = 'slice'
 
     def _attach(self, blockdevice):
         with blockdevice(self._cloud) as dev:

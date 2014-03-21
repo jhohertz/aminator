@@ -3,42 +3,42 @@ ec2_yum_linux:
     cloud: ec2
     distro: redhat
     provisioner: yum
-    volume: linux
+    volume: slice
     blockdevice: slice
     finalizer: tagging_ebs
 ec2_apt_linux:
     cloud: ec2
     distro: debian
     provisioner: apt
-    volume: linux
+    volume: slice
     blockdevice: slice
     finalizer: tagging_ebs
 ec2_aptitude_linux:
     cloud: ec2
     distro: debian
     provisioner: aptitude
-    volume: linux
+    volume: slice
     blockdevice: slice
     finalizer: tagging_ebs
 ec2_yum_linux_s3:
     cloud: ec2
     distro: redhat
     provisioner: yum
-    volume: linux
+    volume: slice
     blockdevice: slice
     finalizer: tagging_s3
 ec2_apt_linux_s3:
     cloud: ec2
     distro: debian
     provisioner: apt
-    volume: linux
+    volume: slice
     blockdevice: slice
     finalizer: tagging_s3
 ec2_aptitude_linux_s3:
     cloud: ec2
     distro: debian
     provisioner: aptitude
-    volume: linux
+    volume: slice
     blockdevice: slice
     finalizer: tagging_s3
 
