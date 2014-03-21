@@ -19,9 +19,9 @@
 #
 
 """
-aminator.plugins.blockdevice.linux
+aminator.plugins.blockdevice.slice
 ==================================
-basic linux block device manager
+basic slice block device manager
 """
 import fcntl
 import os
@@ -33,18 +33,18 @@ from aminator.plugins.blockdevice.base import BaseBlockDevicePlugin
 from aminator.util.linux import flock, locked, native_device_prefix
 
 
-__all__ = ('LinuxBlockDevicePlugin',)
+__all__ = ('SliceBlockDevicePlugin',)
 log = logging.getLogger(__name__)
 
 
 BlockDevice = namedtuple('BlockDevice', 'node handle')
 
 
-class LinuxBlockDevicePlugin(BaseBlockDevicePlugin):
-    _name = 'linux'
+class SliceBlockDevicePlugin(BaseBlockDevicePlugin):
+    _name = 'slice'
 
     def configure(self, config, parser):
-        super(LinuxBlockDevicePlugin, self).configure(config, parser)
+        super(SliceBlockDevicePlugin, self).configure(config, parser)
 
         block_config = self._config.plugins[self.full_name]
 
